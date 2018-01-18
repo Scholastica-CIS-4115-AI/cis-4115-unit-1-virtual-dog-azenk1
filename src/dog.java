@@ -250,7 +250,7 @@ public class dog {
                 setState(States.SLEEPY);
                 break;
             case WALK:
-                setState(States.HAPPY);
+                setState(States.HUNGRY);
                 break;
             case FEED:
                 setState(States.SLEEPY);
