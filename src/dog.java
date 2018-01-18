@@ -157,8 +157,9 @@ public class dog {
      */
     private void updateHappy(Actions currentAction) {
         switch (currentAction) {
-            case PET:								//dog is being petted
-            case FEED:								//or dog is being fed
+            case PET:
+                setState(States.HAPPY);                         //dog is being petted
+            case FEED:                                          //or dog is being fed
                 setState(States.SLEEPY); 			//  the dog stays happy
                 break;
             case WALK:								//dog is being walked
@@ -200,6 +201,8 @@ public class dog {
     private void updateHungry(Actions currentAction) {
         switch (currentAction) {
             case PET:
+                setState(States.ANGRY);
+                break;
             case WALK:
                 setState(States.HUNGRY);
                 break;
@@ -221,8 +224,14 @@ public class dog {
     private void updateAngry(Actions currentAction) {
         switch (currentAction) {
             case PET:
+                setState(States.ANGRY);
+                break;
             case WALK:
+                setState(States.SLEEPY);
+                break;
             case FEED:
+                setState(States.HAPPY);
+                break;
             case IGNORE:
                 setState(States.ANGRY); 			// Currently the dog always stays angry, not matter what you do
                 break;
@@ -238,8 +247,14 @@ public class dog {
     private void updateSleepy(Actions currentAction) {
         switch (currentAction) {
             case PET:
+                setState(States.SLEEPY);
+                break;
             case WALK:
+                setState(States.HAPPY);
+                break;
             case FEED:
+                setState(States.SLEEPY);
+                break;
             case IGNORE:
                 setState(States.ANGRY); 			// Currently the dog always stays angry, not matter what you do
                 break;
